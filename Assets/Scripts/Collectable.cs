@@ -1,0 +1,14 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Collectable : Interactable
+{
+    //Logic
+    protected bool collected;
+    protected override void OnCollide(Collider2D coll)
+    {
+
+    }
+  
+}
