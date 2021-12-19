@@ -8,11 +8,14 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     private void Awake(){
         if(GameManager.instance != null){
-            //Destroy(gameObject);
+            Destroy(gameObject);
             return;
+        }else if (GameManager.instance ==null){
+            instance = this;
+            SceneManager.sceneLoaded += LoadState;
         }
-        instance = this;
-        SceneManager.sceneLoaded += LoadState;
+        
+        
          
     }
 
