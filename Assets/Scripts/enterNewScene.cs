@@ -9,9 +9,11 @@ public class enterNewScene : Interactable
        if(coll.name =="Player"){
            //Save Scene
            GameManager.instance.SaveState();
+
            //teleport the player
            string sceneName = sceneNames[Random.Range(0,sceneNames.Length)];
            UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
+           
        }
     }
 }

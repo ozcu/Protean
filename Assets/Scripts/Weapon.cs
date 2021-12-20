@@ -1,11 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 public class Weapon : Interactable
 {
     //Damage Struct
-    public int damagePoint=1;
+    public int damagePoint= 1;
     public float pushForce = 2.0f;
 
     //Upgrade
@@ -26,6 +25,7 @@ public class Weapon : Interactable
     }
     protected override void Update()
     {
+
         base.Update();
         if(Input.GetKeyDown(KeyCode.Space)){
             if(Time.time - lastSwing > cooldown){
