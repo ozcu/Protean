@@ -9,8 +9,8 @@ public class GameManager : MonoBehaviour
   
 
     //Resources
-    public List<Sprite> playerSprite;
-    public List<Sprite> weaponSprite;
+    public List<Sprite> playerSprites;
+    public List<Sprite> inventoryWeaponSprites;
     public List<int> weaponPrices;
     public List<int> xpTable;
 
@@ -62,6 +62,10 @@ public class GameManager : MonoBehaviour
     }
     public void LoadState(Scene scene,LoadSceneMode mode){
         Debug.Log("LoadState");
+        Debug.Log(GameManager.instance.inventoryWeaponSprites[0]);
+
+        //Teleport player to spawnPoint on load
+        player.transform.position = GameObject.Find("SpawnPoint").transform.position;
         
         if(!PlayerPrefs.HasKey("SaveState")){
             return;
@@ -82,9 +86,6 @@ public class GameManager : MonoBehaviour
 
         //Assign weaponLevel 
         //weaponLevel = int.Parse(data[3]);
-
-        //Teleport player to spawnPoint on load
-        player.transform.position = GameObject.Find("Spawn_Point").transform.position;
     }
 
 }
