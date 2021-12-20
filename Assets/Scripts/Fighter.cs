@@ -6,6 +6,9 @@ public class Fighter : MonoBehaviour
 {
     public int hitpoint = 10;
     public int maxHitpoint = 10;
+    public int mana = 5;
+    public int maxMana = 10;
+    public float manaRecoverySpeed= 0.1f;
     public float pushRecoverySpeed = 0.2f;
 
     protected float immuneTime = 1.0f;
