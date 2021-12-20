@@ -1,13 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
-public abstract class Mover : MonoBehaviour
+public abstract class Mover : Fighter
 {
     protected BoxCollider2D boxCollider;
     protected RaycastHit2D hit;
-    protected Vector2 moveDelta;
-    public Sprite Player_left;
+    protected Vector3 moveDelta;
+    //public Sprite Player_left;
     public Sprite Player_right;
     public Sprite Player_up;
     public Sprite Player_down;
@@ -21,23 +20,28 @@ public abstract class Mover : MonoBehaviour
         boxCollider = GetComponent<BoxCollider2D>();
     }
  
-    protected virtual void UpdatePlayer(Vector3 input){
+    protected virtual void moveActor(Vector3 input){
         //Reset moveDelta
     moveDelta = new Vector3(input.x * xSpeed,input.y *ySpeed,0);
     
 
     //Swap Sprite direction
     if(moveDelta.x > 0){
-        this.gameObject.GetComponent<SpriteRenderer>().sprite = Player_right;
+        //this.gameObject.GetComponent<SpriteRenderer>().sprite = Player_right;
+        transform.localScale = new Vector3(1,1,0);
     }else if(moveDelta.x <0){
-        this.gameObject.GetComponent<SpriteRenderer>().sprite = Player_left;
-        //transform.localScale = new Vector3(-1,1,0);
+        //this.gameObject.GetComponent<SpriteRenderer>().sprite = Player_left;
+        transform.localScale = new Vector3(-1,1,0);
     }else if(moveDelta.y >0){
         this.gameObject.GetComponent<SpriteRenderer>().sprite = Player_up;
     }else if(moveDelta.y <0){
         this.gameObject.GetComponent<SpriteRenderer>().sprite = Player_down;
     }
 
+    //Add Push Vector from Combat
+    moveDelta +=pushDirection;
+    //Reduce the push force according to Push Recovery Speed
+    pushDirection = Vector3.Lerp(pushDirection,Vector3.zero,pushRecoverySpeed);
     
 
     //Control for Collision
