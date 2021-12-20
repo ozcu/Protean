@@ -8,6 +8,9 @@ public class trackPlayer : MonoBehaviour
  public float boundX = 0.15f;
  public float boundY = 0.05f;
 
+private void Start() {
+    lookAt = GameObject.Find("Player").transform;
+}
  private void LateUpdate() {
     Vector2 delta = Vector2.zero;
 

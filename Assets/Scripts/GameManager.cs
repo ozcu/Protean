@@ -1,4 +1,4 @@
-using System.Collections;
+
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -6,18 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    private void Awake(){
-        if(GameManager.instance != null){
-            Destroy(gameObject);
-            return;
-        }else if (GameManager.instance ==null){
-            instance = this;
-            SceneManager.sceneLoaded += LoadState;
-        }
-        
-        
-         
-    }
+  
 
     //Resources
     public List<Sprite> playerSprite;
@@ -26,8 +15,19 @@ public class GameManager : MonoBehaviour
     public List<int> xpTable;
 
     //References
-
     public Player player;
+
+      private void Awake(){
+        if(GameManager.instance != null){
+            Destroy(gameObject); //Persist Game Manager
+            Destroy(player.gameObject); //Persist Player
+            Destroy(floatingTextManager.gameObject); //Persist floatingTextManager
+            return;
+        }else if (GameManager.instance ==null){
+            instance = this;
+            SceneManager.sceneLoaded += LoadState;
+        }
+    }
 
     //Floating Text
     public floatingTextManager floatingTextManager;
@@ -83,6 +83,8 @@ public class GameManager : MonoBehaviour
         //Assign weaponLevel 
         //weaponLevel = int.Parse(data[3]);
 
+        //Teleport player to spawnPoint on load
+        player.transform.position = GameObject.Find("Spawn_Point").transform.position;
     }
 
 }

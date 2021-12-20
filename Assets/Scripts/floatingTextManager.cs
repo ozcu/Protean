@@ -9,6 +9,9 @@ public class floatingTextManager : MonoBehaviour
     public GameObject textPrefab;
     private List<floatingTextObj> floatingTexts = new List<floatingTextObj>();
 
+    private void Start(){
+        DontDestroyOnLoad(textContainer);
+    }
     private void Update() {
         foreach(floatingTextObj txt in floatingTexts){
             txt.UpdateFloatingText();
@@ -19,10 +22,9 @@ public class floatingTextManager : MonoBehaviour
         floatingTextObj.txt.text = msg;
         floatingTextObj.txt.fontSize = fontSize;
         floatingTextObj.txt.color = color;
-        floatingTextObj.gameObj.transform.position = Camera.main.WorldToScreenPoint(position);
-         floatingTextObj.motion = motion;
+        floatingTextObj.gameObj.transform.position = Camera.main.WorldToScreenPoint(position); //works with camera tagged main
+        floatingTextObj.motion = motion;
         floatingTextObj.duration = duration;
-
         floatingTextObj.Show();
 
     }
