@@ -47,12 +47,12 @@ public abstract class Mover : Fighter
     //Control for Collision
     hit = Physics2D.BoxCast(transform.position,boxCollider.size,0,new Vector2(0,moveDelta.y),Mathf.Abs(moveDelta.y * Time.deltaTime),LayerMask.GetMask("Actor","Blocker"));
     if(hit.collider == null){
-        //Move Player
+        //Move Player on Y
         transform.Translate(0,moveDelta.y * Time.deltaTime,0);
     }
      hit = Physics2D.BoxCast(transform.position,boxCollider.size,0,new Vector2(moveDelta.x,0),Mathf.Abs(moveDelta.x * Time.deltaTime),LayerMask.GetMask("Actor","Blocker"));
     if(hit.collider == null){
-        //Move Player
+        //Move Player on X
         transform.Translate(moveDelta.x * Time.deltaTime,0,0);
     }
     }

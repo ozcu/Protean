@@ -21,12 +21,12 @@ public class PlayerMenu : MonoBehaviour
     private void selectInventoryItem(bool isClicked){
         //isclicked check raycast to object and confirm
 
-        if(isClicked){
+     /*    if(isClicked){
             currentWeaponSelection = gameObject.tag;
             if(gameObject.tag == "Weapon"){
                 wearWeapon();
             }
-        }
+        } */
     }
     public void wearWeapon(){
       //  currentWeaponSprite.sprite = GameManager.instance.inventoryWeaponSprites[inventoryWeaponIndex]; //how to define index in inventory?

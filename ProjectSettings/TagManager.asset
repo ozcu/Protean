@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Fighter
+  - Weapon
   layers:
   - Default
   - TransparentFX
@@ -52,4 +54,7 @@ TagManager:
     locked: 0
   - name: Actors
     uniqueID: 2642907351
+    locked: 0
+  - name: Weapon
+    uniqueID: 2861209353
     locked: 0
