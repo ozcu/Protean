@@ -18,14 +18,18 @@ public class GameManager : MonoBehaviour
     public Player player;
 
       private void Awake(){
+          //Prevent double instances
         if(GameManager.instance != null){
-            Destroy(gameObject); //Persist Game Manager
-            Destroy(player.gameObject); //Persist Player
-            Destroy(floatingTextManager.gameObject); //Persist floatingTextManager
+            Destroy(gameObject); //Game manager itself
+            Destroy(player.gameObject); 
+            Destroy(floatingTextManager.gameObject); 
+
             return;
         }else if (GameManager.instance ==null){
+
+            //PlayerPrefs.DeleteAll(); deletes saved data 
             instance = this;
-            SceneManager.sceneLoaded += LoadState;
+            SceneManager.sceneLoaded += LoadState;  //on scene load event fire loadstate function
         }
     }
 
@@ -45,7 +49,7 @@ public class GameManager : MonoBehaviour
     * INT coins
     * INT experience
     * INT weaponLevel
-    *
+    * -> ARRAY Of Inv item?
     */
 
     public void SaveState(){
@@ -62,15 +66,16 @@ public class GameManager : MonoBehaviour
     }
     public void LoadState(Scene scene,LoadSceneMode mode){
         Debug.Log("LoadState");
-        Debug.Log(GameManager.instance.inventoryWeaponSprites[0]);
+        
+        //Debug.Log(GameManager.instance.inventoryWeaponSprites[0]);
 
         //Teleport player to spawnPoint on load
         player.transform.position = GameObject.Find("SpawnPoint").transform.position;
-        
+     
         if(!PlayerPrefs.HasKey("SaveState")){
             return;
         }
-        SceneManager.sceneLoaded -= LoadState;
+       
         DontDestroyOnLoad(gameObject);
         
         string[] data =PlayerPrefs.GetString("SaveState").Split('|');
