@@ -9,9 +9,6 @@ public class floatingTextManager : MonoBehaviour
     public GameObject textPrefab;
     private List<floatingTextObj> floatingTexts = new List<floatingTextObj>();
 
-    private void Start(){
-        DontDestroyOnLoad(textContainer);
-    }
     private void Update() {
         foreach(floatingTextObj txt in floatingTexts){
             txt.UpdateFloatingText();

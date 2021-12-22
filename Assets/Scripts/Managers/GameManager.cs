@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
+using System;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
   
-
     //Resources
     public List<Sprite> playerSprites;
     public List<Sprite> inventoryWeaponSprites;
@@ -17,12 +20,18 @@ public class GameManager : MonoBehaviour
     //References
     public Player player;
 
+
       private void Awake(){
           //Prevent double instances
         if(GameManager.instance != null){
-            Destroy(gameObject); //Game manager itself
+            Destroy(this.gameObject); //Game manager itself
             Destroy(player.gameObject); 
             Destroy(floatingTextManager.gameObject); 
+            Destroy(EventSystem.current.gameObject);
+            Destroy(GameObject.Find("PlayerMenu"));
+            Destroy(GameObject.Find("MainMenuContainer"));
+            Destroy(GameObject.Find("HUDContainer"));
+
 
             return;
         }else if (GameManager.instance ==null){
@@ -54,43 +63,44 @@ public class GameManager : MonoBehaviour
 
     public void SaveState(){
         Debug.Log("SaveState");
-        string scene = "";
+       
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream file = File.Create(Application.persistentDataPath + "/playerInfo.dat");
+        PlayerDataStorage playerData = new PlayerDataStorage();
+        playerData.coins = coins;
+        playerData.experience = experience;
 
-        scene += "0" + "|";
-        scene += coins.ToString() + "|";
-        scene += experience.ToString() + "|";
-        scene += "0" + "|";
+        bf.Serialize(file,playerData);
+        file.Close();
+    }
 
-        PlayerPrefs.SetString("SaveState",scene);
-        
+    [Serializable]
+    class PlayerDataStorage{
+        public int coins;
+        public int experience;
+
+
     }
     public void LoadState(Scene scene,LoadSceneMode mode){
         Debug.Log("LoadState");
         
-        //Debug.Log(GameManager.instance.inventoryWeaponSprites[0]);
+        if(File.Exists(Application.persistentDataPath + "/playerInfo.dat")){
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Open(Application.persistentDataPath + "/playerInfo.dat",FileMode.Open);
+            PlayerDataStorage playerData= (PlayerDataStorage)bf.Deserialize(file);
+
+            coins = playerData.coins;
+            experience = playerData.experience;
+
+            file.Close();
+
+        }
 
         //Teleport player to spawnPoint on load
         player.transform.position = GameObject.Find("SpawnPoint").transform.position;
-     
-        if(!PlayerPrefs.HasKey("SaveState")){
-            return;
-        }
-       
-        DontDestroyOnLoad(gameObject);
-        
-        string[] data =PlayerPrefs.GetString("SaveState").Split('|');
 
-        //Change playerSkin
-        //playerskin = data[0];
+        //Debug.Log(GameManager.instance.inventoryWeaponSprites[0]);
 
-        //Assign Coins
-        coins = int.Parse(data[1]);
-
-        //Assign Experience
-        experience = int.Parse(data[2]);
-
-        //Assign weaponLevel 
-        //weaponLevel = int.Parse(data[3]);
     }
 
 }
