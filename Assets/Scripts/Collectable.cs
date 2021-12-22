@@ -6,6 +6,7 @@ public class Collectable : Interactable
 {
     //Logic
     protected bool collected;
+    public Item item;
     protected override void OnCollide(Collider2D coll)
     {
         if(coll.name == "Player"){
@@ -14,6 +15,14 @@ public class Collectable : Interactable
         
     }
     protected virtual void OnCollect(){
+        
         collected = true;
+        Debug.Log("picking up item " + item.name);
+        bool wasPickedUp = Inventory.instance.Add(item);
+        if(wasPickedUp){
+           Destroy(this.gameObject);
+        }
+        
+        
     }
 }

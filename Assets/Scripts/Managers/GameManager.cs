@@ -17,10 +17,9 @@ public class GameManager : MonoBehaviour
     public List<int> weaponPrices;
     public List<int> xpTable;
 
-    //References
-    public Player player;
+  
 
-
+    #region Singleton
       private void Awake(){
           //Prevent double instances
         if(GameManager.instance != null){
@@ -41,12 +40,15 @@ public class GameManager : MonoBehaviour
             SceneManager.sceneLoaded += LoadState;  //on scene load event fire loadstate function
         }
     }
-
+    #endregion
     //Floating Text
     public floatingTextManager floatingTextManager;
     public void ShowText(string msg,int fontSize,Color color,Vector3 position,Vector3 motion,float duration){
         floatingTextManager.Show( msg, fontSize, color, position, motion, duration);
     }
+
+    //References
+    public Player player;
 
     //Logic
     public int coins;
@@ -58,7 +60,6 @@ public class GameManager : MonoBehaviour
     * INT coins
     * INT experience
     * INT weaponLevel
-    * -> ARRAY Of Inv item?
     */
 
     public void SaveState(){
@@ -98,8 +99,6 @@ public class GameManager : MonoBehaviour
 
         //Teleport player to spawnPoint on load
         player.transform.position = GameObject.Find("SpawnPoint").transform.position;
-
-        //Debug.Log(GameManager.instance.inventoryWeaponSprites[0]);
 
     }
 

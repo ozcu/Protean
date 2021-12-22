@@ -29,6 +29,8 @@ public class Interactable : MonoBehaviour
         }
     }
     protected virtual void OnCollide(Collider2D coll){
-        Debug.Log("Interaction was not implemented yet with " + this.name);
+        if(this.name !="Player"){
+            Debug.Log("Interaction was not implemented yet with " + this.name);
+        }
     }
 }
