@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class InventoryUI : MonoBehaviour
@@ -24,7 +22,7 @@ public class InventoryUI : MonoBehaviour
         
     }
     void updateUI(){
-        Debug.Log("updating ui");
+        Debug.Log("Updating Inventory");
 
         for (int i = 0; i < slots.Length; i++)
         {
