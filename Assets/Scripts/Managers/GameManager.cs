@@ -101,5 +101,7 @@ public class GameManager : MonoBehaviour
         player.transform.position = GameObject.Find("SpawnPoint").transform.position;
 
     }
-
+    /* private void Update() {
+        Debug.Log(this.player.transform.position);
+    } */
 }
