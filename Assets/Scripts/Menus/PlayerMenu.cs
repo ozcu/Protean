@@ -34,7 +34,7 @@ public class PlayerMenu : MonoBehaviour
 
     //Update Character Information everytime menu is opened
     public void updateMenu(){
-        Debug.Log("player menu updated!");
+        Debug.Log("player menu data updated!");
         //Weapon
         //weaponSprite.sprite = GameManager.instance.inventoryWeaponSprites[0];
         //Switching weapon is not implemented yet.
