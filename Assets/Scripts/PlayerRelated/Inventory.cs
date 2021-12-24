@@ -1,8 +1,7 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Inventory : MonoBehaviour
+public class Inventory : Collectable
 {
     #region Singleton
     public static Inventory instance;
@@ -27,7 +26,7 @@ public class Inventory : MonoBehaviour
     public bool Add(Item item){
         if(!item.isDefaulItem){
             if(items.Count >= invSpace){
-                Debug.Log("not enough room in inventory");
+                Debug.Log("Not enough room in inventory");
                 return false;
             }
             items.Add(item);
@@ -39,9 +38,14 @@ public class Inventory : MonoBehaviour
         return true;
     }
     public void Remove(Item item){
+        
+        Instantiate(item.gameObject, GameManager.instance.player.transform.position + new Vector3(0.15f,0,0), Quaternion.identity);
         items.Remove(item);
-         if(onInventoryChangedCallback != null){
-                onInventoryChangedCallback.Invoke();
-            }
+        OnDrop();
+        if(onInventoryChangedCallback != null){
+            onInventoryChangedCallback.Invoke();
+        } 
     }
+
+   
 }
