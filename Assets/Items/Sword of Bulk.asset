@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 150b1af77dcb3c344bcf8abeffd99f97, type: 3}
-  m_Name: Sword of Mud
+  m_Name: Sword of Bulk
   m_EditorClassIdentifier: 
-  name: Sword of Mud
-  icon: {fileID: 5718469909854450143, guid: a7d819d0171b0a944a237d40c3415004, type: 3}
+  name: Sword of Bulk
+  icon: {fileID: -5488275578273347653, guid: a7d819d0171b0a944a237d40c3415004, type: 3}
   isDefaulItem: 0
-  gameObject: {fileID: 5517191657749988593, guid: 4a772d271b0cf5743b60c87c75faaeb0, type: 3}
+  gameObject: {fileID: 945300440902870421, guid: d0609633fdb386449a39b2cfcb553b41, type: 3}

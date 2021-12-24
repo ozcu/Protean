@@ -17,12 +17,14 @@ public class Collectable : Interactable
     protected virtual void OnCollect(){
         
         collected = true;
-        Debug.Log("picking up item " + item.name);
+        Debug.Log("Picking up item " + item.name);
         bool wasPickedUp = Inventory.instance.Add(item);
         if(wasPickedUp){
            Destroy(this.gameObject);
         }
-        
-        
+    }
+    protected virtual void OnDrop(){
+        collected=false;
+
     }
 }
