@@ -8,10 +8,11 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5517191657749988589}
+  - component: {fileID: 4204957320786493405}
   - component: {fileID: 5517191657749988590}
   - component: {fileID: 5517191657749988591}
   - component: {fileID: 5517191657749988592}
+  - component: {fileID: 3867563297522545738}
   m_Layer: 0
   m_Name: SwordOfMud
   m_TagString: Weapon
@@ -19,7 +20,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5517191657749988589
+--- !u!4 &4204957320786493405
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -27,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5517191657749988593}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.22, y: -0.489, z: 0}
+  m_LocalPosition: {x: 2.56, y: -0.489, z: 0}
   m_LocalScale: {x: 0.75, y: 0.75, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -137,3 +138,15 @@ MonoBehaviour:
     minNormalAngle: 0
     maxNormalAngle: 0
   item: {fileID: 11400000, guid: c10e5f0007f52e74fb3dd771d22276db, type: 2}
+--- !u!114 &3867563297522545738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5517191657749988593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5748289fa2bb17244bc02d969737fd2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

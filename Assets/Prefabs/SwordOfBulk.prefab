@@ -8,10 +8,11 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2889431758991887353}
+  - component: {fileID: 6898038891741138235}
   - component: {fileID: 4871784807898201619}
   - component: {fileID: 8216378524074312518}
   - component: {fileID: 357270916323873521}
+  - component: {fileID: 196550204915450232}
   m_Layer: 0
   m_Name: SwordOfBulk
   m_TagString: Untagged
@@ -19,7 +20,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2889431758991887353
+--- !u!4 &6898038891741138235
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -137,3 +138,16 @@ MonoBehaviour:
     minNormalAngle: 0
     maxNormalAngle: 0
   item: {fileID: 11400000, guid: b005f33d0a7fcb5449e5d8ac8755d365, type: 2}
+--- !u!114 &196550204915450232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 945300440902870421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5748289fa2bb17244bc02d969737fd2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCamera: {fileID: 0}
