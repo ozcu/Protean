@@ -7,9 +7,7 @@ public abstract class Mover : Fighter
     protected RaycastHit2D hit;
     protected Vector3 moveDelta;
 
-    public Sprite Actor_right;
-    public Sprite Actor_up;
-    public Sprite Actor_down;
+    private Animator anim;
 
     protected float xSpeed = 1.0f;
     protected float ySpeed = 0.75f;
@@ -18,6 +16,7 @@ public abstract class Mover : Fighter
     protected virtual void Start(){
 
         boxCollider = GetComponent<BoxCollider2D>();
+        anim = GetComponent<Animator>();
     }
  
     protected virtual void moveActor(Vector3 input){
@@ -27,15 +26,24 @@ public abstract class Mover : Fighter
 
         //Swap Sprite direction
         if(moveDelta.x > 0){
-            this.gameObject.GetComponent<SpriteRenderer>().sprite = Actor_right;
+            anim.SetBool("right",true);
+            anim.SetBool("left",false);
             transform.localScale = new Vector3(1,1,0);
         }else if(moveDelta.x <0){
-            //this.gameObject.GetComponent<SpriteRenderer>().sprite = Actor_left;
+            anim.SetBool("right",true);
+            anim.SetBool("left",false);
             transform.localScale = new Vector3(-1,1,0);
         }else if(moveDelta.y >0){
-            this.gameObject.GetComponent<SpriteRenderer>().sprite = Actor_up;
+            anim.SetBool("up",true);
+            anim.SetBool("down",false);
         }else if(moveDelta.y <0){
-            this.gameObject.GetComponent<SpriteRenderer>().sprite = Actor_down;
+            anim.SetBool("down",true);
+            anim.SetBool("up",false);
+        }else if(moveDelta.x==0 && moveDelta.y ==0){
+            anim.SetBool("right",false);
+            anim.SetBool("left",false);
+            anim.SetBool("up",false);
+            anim.SetBool("down",false);
         }
 
         //Add Push Vector from Combat
