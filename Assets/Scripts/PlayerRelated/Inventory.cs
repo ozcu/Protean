@@ -37,11 +37,19 @@ public class Inventory : Collectable
         } 
         return true;
     }
-    public void Remove(Item item){
+    public void Drop(Item item){
         
         Instantiate(item.gameObject, GameManager.instance.player.transform.position + new Vector3(0.15f,0,0), Quaternion.identity);
         items.Remove(item);
         OnDrop();
+        if(onInventoryChangedCallback != null){
+            onInventoryChangedCallback.Invoke();
+        } 
+    }
+
+    public void Remove(Item item){
+        items.Remove(item);
+
         if(onInventoryChangedCallback != null){
             onInventoryChangedCallback.Invoke();
         } 
