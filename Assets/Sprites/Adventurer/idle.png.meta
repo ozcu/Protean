@@ -1,28 +1,19 @@
 fileFormatVersion: 2
-guid: a7d819d0171b0a944a237d40c3415004
+guid: e9877b8081b38b24f983715a89904da2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5718469909854450143
-    second: Weapon_2
+      213: 8793639957104055765
+    second: idle_0
   - first:
-      213: -7048581465117660784
-    second: Weapon_3
+      213: 6084859605308855041
+    second: idle_1
   - first:
-      213: 2741894310953368383
-    second: Player_2
+      213: 8603369663158992956
+    second: idle_2
   - first:
-      213: 6984513114953419391
-    second: Enemy_NPC_0
-  - first:
-      213: -7385175419658825098
-    second: Weapon_4
-  - first:
-      213: 9119227501592392301
-    second: Weapon_4
-  - first:
-      213: 6104463937874508726
-    second: Potion_0
+      213: -5906421172241655209
+    second: idle_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -124,137 +115,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Weapon_2
-      rect:
-        serializedVersion: 2
-        x: 163
-        y: 225
-        width: 10
-        height: 25
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fd172a3d5161c5f40800000000000000
-      internalID: 5718469909854450143
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Weapon_3
-      rect:
-        serializedVersion: 2
-        x: 179
-        y: 225
-        width: 10
-        height: 28
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 1}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0996241a0886e2e90800000000000000
-      internalID: -7048581465117660784
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_2
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f3b3a00495a2d0620800000000000000
-      internalID: 2741894310953368383
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Enemy_NPC_0
+      name: idle_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 80
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f7a0bd92ca9fde060800000000000000
-      internalID: 6984513114953419391
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Weapon_4
-      rect:
-        serializedVersion: 2
-        x: 195
-        y: 225
-        width: 10
-        height: 25
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6721a4b8516928990800000000000000
-      internalID: -7385175419658825098
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Weapon_5
-      rect:
-        serializedVersion: 2
-        x: 211
-        y: 225
-        width: 10
-        height: 25
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d623362d8110e8e70800000000000000
-      internalID: 9119227501592392301
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Potion_0
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 63
+        y: 0
         width: 16
         height: 16
       alignment: 0
@@ -264,8 +129,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6bb3131db9967b450800000000000000
-      internalID: 6104463937874508726
+      spriteID: 5d55ed543f8490a70800000000000000
+      internalID: 8793639957104055765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 103de827293c17450800000000000000
+      internalID: 6084859605308855041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c30c6f3402f456770800000000000000
+      internalID: 8603369663158992956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75a90b6cc3d280ea0800000000000000
+      internalID: -5906421172241655209
       vertices: []
       indices: 
       edges: []

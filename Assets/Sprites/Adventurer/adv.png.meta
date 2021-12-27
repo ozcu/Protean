@@ -4,31 +4,31 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: 5754415660626693649
-    second: Player_Idle
+    second: up0
   - first:
       213: -461179013993305479
-    second: Player_left
+    second: up1
   - first:
       213: 8264740863832756863
-    second: Player_up
+    second: up2
   - first:
       213: 8206039735382113191
-    second: Player_down
+    second: down0
   - first:
       213: 4485954847525720090
-    second: Player_left_walking
+    second: down1
   - first:
       213: -8324692263591477850
-    second: Player_up_walking
+    second: down2
   - first:
       213: -7540631601432186668
-    second: Player_down_walking
+    second: left0
   - first:
       213: -8250478772562742548
-    second: Player_left_walking_2
+    second: left1
   - first:
       213: -6878846371928645118
-    second: Player_up_walking_2
+    second: left2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -130,10 +130,10 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Player_Idle
+      name: up0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 32
         y: 16
         width: 16
         height: 16
@@ -151,10 +151,10 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_left
+      name: up1
       rect:
         serializedVersion: 2
-        x: 16
+        x: 80
         y: 16
         width: 16
         height: 16
@@ -172,12 +172,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_up
+      name: up2
       rect:
         serializedVersion: 2
-        x: 32
+        x: 129
         y: 16
-        width: 16
+        width: 15
         height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -193,10 +193,10 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_down
+      name: down0
       rect:
         serializedVersion: 2
-        x: 48
+        x: 0
         y: 16
         width: 16
         height: 16
@@ -214,10 +214,10 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_left_walking
+      name: down1
       rect:
         serializedVersion: 2
-        x: 64
+        x: 48
         y: 16
         width: 16
         height: 16
@@ -235,10 +235,10 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_up_walking
+      name: down2
       rect:
         serializedVersion: 2
-        x: 80
+        x: 96
         y: 16
         width: 16
         height: 16
@@ -256,15 +256,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_down_walking
+      name: left0
       rect:
         serializedVersion: 2
-        x: 96
+        x: 16
         y: 16
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -277,15 +277,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_left_walking_2
+      name: left1
       rect:
         serializedVersion: 2
-        x: 112
+        x: 64
         y: 16
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -298,15 +298,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_up_walking_2
+      name: left2
       rect:
         serializedVersion: 2
-        x: 128
+        x: 112
         y: 16
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
