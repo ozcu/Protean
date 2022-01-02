@@ -5,7 +5,7 @@ public abstract class Mover : Fighter
 {
     protected BoxCollider2D boxCollider;
     protected RaycastHit2D hit;
-    protected Vector3 moveDelta;
+    public Vector3 moveDelta;
 
     private Animator anim;
 
@@ -19,7 +19,7 @@ public abstract class Mover : Fighter
         anim = GetComponent<Animator>();
     }
  
-    protected virtual void moveActor(Vector3 input){
+    public virtual void moveActor(Vector3 input){
         //Reset moveDelta
         moveDelta = new Vector3(input.x * xSpeed,input.y *ySpeed,0);
         
@@ -27,11 +27,11 @@ public abstract class Mover : Fighter
         //Swap Sprite direction
         if(moveDelta.x > 0){
             anim.SetBool("right",true);
-            anim.SetBool("left",false);
+           // anim.SetBool("left",false);
             transform.localScale = new Vector3(1,1,0);
         }else if(moveDelta.x <0){
             anim.SetBool("right",true);
-            anim.SetBool("left",false);
+            //anim.SetBool("left",false);
             transform.localScale = new Vector3(-1,1,0);
         }else if(moveDelta.y >0){
             anim.SetBool("up",true);
@@ -41,7 +41,7 @@ public abstract class Mover : Fighter
             anim.SetBool("up",false);
         }else if(moveDelta.x==0 && moveDelta.y ==0){
             anim.SetBool("right",false);
-            anim.SetBool("left",false);
+            //anim.SetBool("left",false);
             anim.SetBool("up",false);
             anim.SetBool("down",false);
         }

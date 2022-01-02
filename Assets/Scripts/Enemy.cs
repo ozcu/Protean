@@ -21,7 +21,7 @@ public class Enemy : Mover
     {
         base.Start();
         playerTransform = GameObject.Find("Player").transform;
-        startingPosition = transform.position;
+        startingPosition = this.transform.position;
         hitbox = transform.GetChild(0).GetComponent<BoxCollider2D>(); //Boxcollider for hitbox instead of object itself
     }
     private void FixedUpdate()
@@ -33,9 +33,9 @@ public class Enemy : Mover
             }
             if(isChasing){
                 if(!isColliding){
-                    moveActor((playerTransform.position - transform.position).normalized);
+                    moveActor((playerTransform.position - this.transform.position).normalized);
                 }else{
-                    moveActor(startingPosition - transform.position);
+                    moveActor(startingPosition - this.transform.position);
                 }
             }
         }else{
@@ -61,7 +61,7 @@ public class Enemy : Mover
 
 
     protected override void Death(){
-        Destroy(gameObject);
+        Destroy(gameObject); //add animation later.
         GameManager.instance.experience += xpAmount;
         GameManager.instance.ShowText("+" + xpAmount + " XP",30,Color.blue,transform.position,Vector3.up *40,1.0f);
     }
