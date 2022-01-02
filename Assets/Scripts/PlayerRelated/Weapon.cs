@@ -9,28 +9,43 @@ public class Weapon : Interactable
 
     //Upgrade
     public int weaponLevel = 0;
-    public SpriteRenderer spriteRenderer;
 
     //Swing
     private Animator anim;
     private float cooldown = 0.5f;
     private float lastSwing;
 
+    private Vector3 weaponMoveDelta;
 
+    
     protected override void Start()
     {
         base.Start();
-        spriteRenderer = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
+        
+
     }
     protected override void Update()
     {
 
         base.Update();
+        //weaponMoveDelta = GameManager.instance.player.moveDelta; 
+
         if(Input.GetKeyDown(KeyCode.Space)){
             if(Time.time - lastSwing > cooldown){
                 lastSwing=Time.time;
-                Swing();
+                attackRight();
+                Debug.Log("space");
+                /* if(weaponMoveDelta.x>0){
+                    attackRight();
+                }else if(weaponMoveDelta.x<0){
+                    attackLeft();
+                }else if(weaponMoveDelta.y >0){
+                    attackUp();
+                }else if(weaponMoveDelta.y <0){
+                    attackDown();
+                }
+                 */
             }
         }
     }
@@ -53,8 +68,21 @@ public class Weapon : Interactable
         }
        
     }
-    private void Swing(){
-        anim.SetTrigger("Swing");
+    private void attackRight(){
+        Debug.Log(anim);
+        anim.SetTrigger("attack_right");
+        
+    }
+     private void attackLeft(){
+        anim.SetTrigger("attack_left");
+        
+    }
+     private void attackUp(){
+        anim.SetTrigger("attack_up");
+        
+    }
+     private void attackDown(){
+        anim.SetTrigger("attack_down");
         
     }
 }

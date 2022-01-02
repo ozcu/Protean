@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 5359778335936938017}
   - component: {fileID: 5359778335936938016}
   - component: {fileID: 5359778335936938023}
+  - component: {fileID: 554494613891519426}
   m_Layer: 9
   m_Name: Enemy_NPC_0
   m_TagString: Fighter
@@ -211,10 +212,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitpoint: 3
   maxHitpoint: 3
+  mana: 5
+  maxMana: 10
+  manaRecoverySpeed: 0.1
   pushRecoverySpeed: 0.2
-  Player_right: {fileID: 0}
-  Player_up: {fileID: 0}
-  Player_down: {fileID: 0}
   xpAmount: 1
   triggerLength: 0.8
   chaseLength: 2
@@ -232,3 +233,22 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
+--- !u!95 &554494613891519426
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5359778335936938019}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
