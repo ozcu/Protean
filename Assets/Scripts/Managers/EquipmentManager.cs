@@ -11,7 +11,7 @@ public class EquipmentManager : MonoBehaviour
     }
     #endregion
 
-    Equipment[] currentEquipment;
+    public Equipment[] currentEquipment;
     public delegate void OnEquipmentChanged(Equipment newItem,Equipment oldItem);
     public OnEquipmentChanged onEquipmentChanged;
     Inventory inventory;
