@@ -9,8 +9,8 @@ public abstract class Mover : Fighter
 
     private Animator anim;
 
-    protected float xSpeed = 1.0f;
-    protected float ySpeed = 0.75f;
+    public float xSpeed = 1.0f;
+    public float ySpeed = 1.0f; //horizontal needs to be changed 0.75 but blend trees also needs to be updated
 
 
     protected virtual void Start(){
@@ -24,26 +24,17 @@ public abstract class Mover : Fighter
         moveDelta = new Vector3(input.x * xSpeed,input.y *ySpeed,0);
         
 
-        //Swap Sprite direction
-        if(moveDelta.x > 0){
-            anim.SetBool("right",true);
-           // anim.SetBool("left",false);
-            transform.localScale = new Vector3(1,1,0);
-        }else if(moveDelta.x <0){
-            anim.SetBool("right",true);
-            //anim.SetBool("left",false);
-            transform.localScale = new Vector3(-1,1,0);
-        }else if(moveDelta.y >0){
-            anim.SetBool("up",true);
-            anim.SetBool("down",false);
-        }else if(moveDelta.y <0){
-            anim.SetBool("down",true);
-            anim.SetBool("up",false);
-        }else if(moveDelta.x==0 && moveDelta.y ==0){
-            anim.SetBool("right",false);
-            //anim.SetBool("left",false);
-            anim.SetBool("up",false);
-            anim.SetBool("down",false);
+        //Animate character according to direction
+        if(moveDelta.x > 0 || moveDelta.x < 0){
+            anim.SetFloat("MoveX",moveDelta.x);
+            anim.SetFloat("MoveY",0f);
+            anim.SetBool("Moving",true);
+        }else if(moveDelta.y > 0 || moveDelta.y < 0){
+            anim.SetFloat("MoveY",moveDelta.y);
+            anim.SetFloat("MoveX",0f);
+            anim.SetBool("Moving",true);
+        }else if(moveDelta.x == 0 && moveDelta.y == 0){
+            anim.SetBool("Moving",false);
         }
 
         //Add Push Vector from Combat
