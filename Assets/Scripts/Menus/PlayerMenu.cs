@@ -36,7 +36,11 @@ public class PlayerMenu : MonoBehaviour
     public void updateMenu(){
         Debug.Log("player menu data updated!");
         //Weapon
-        //weaponSprite.sprite = GameManager.instance.inventoryWeaponSprites[0];
+        if(EquipmentManager.instance.currentEquipment[0] != null){
+           // weaponSprite.sprite = EquipmentManager.instance.currentEquipment[0].icon;
+           Debug.Log(EquipmentManager.instance.currentEquipment[0].name);
+        }
+       
         //Switching weapon is not implemented yet.
 
         //Update MetaData
