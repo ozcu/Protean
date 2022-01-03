@@ -24,7 +24,7 @@ public class Inventory : Collectable
     public List<Item> items = new List<Item>();
 
     public bool Add(Item item){
-        if(!item.isDefaulItem){
+        if(!item.isDefaultItem){
             if(items.Count >= invSpace){
                 Debug.Log("Not enough room in inventory");
                 return false;
